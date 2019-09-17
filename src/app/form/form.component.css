@@ -1,0 +1,22 @@
+.alert {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.isEven {
+    color: blue; 
+    /* background: green; */
+}
+
+.isOdd {
+    color: red;
+    /* background: yellow; */
+}
+
+#added {
+    width: 100%;
+    /* border: 1px solid grey; */
+}
