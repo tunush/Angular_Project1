@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, ViewEncapsulation} from '@angular/core';
 
 export class Number{
   constructor(public digit: number, public checked: boolean = false) {}
@@ -7,7 +7,8 @@ export class Number{
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FormComponent {
   digit:number;
@@ -27,19 +28,5 @@ export class FormComponent {
 
   onKeyUp() {
     this.dis = true;
-  }
-
-  deleteDigits() {
-    let del = [];
-
-    this.digits.forEach(function(item, i, arr) {
-      if (item.checked === true) {
-        del.push(item);
-      }
-    });
-
-    this.digits = this.digits.filter(function (item) {
-      return del.indexOf(item) === -1;
-    });
   }
 }

@@ -1,0 +1,13 @@
+<div class="row">
+    <div id = "added" [ngStyle]="{'display': digitsB2.length === 0 ? 'none' : 'block'}"><h4>The added numbers</h4>
+        <ul *ngFor="let d of digitsB2">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id = "defaultCheck1" [(ngModel)]="d.checked">
+                <label class="form-check-label" for="defaultCheck1">
+                    <li [ngClass] = "{'isEven' : d.digit % 2 === 0 ? true : false, 'isOdd' : d.digit % 2 !== 0 ? true : false}">{{ d.digit }}</li>
+                </label>
+            </div>
+        </ul>
+        <app-block2-button [digitsB2]="digitsB2" (deleteDigitsB2)="deleteDigitsB2($event)"></app-block2-button>
+    </div>
+</div>

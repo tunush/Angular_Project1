@@ -14,20 +14,6 @@
             </div>
         </div>
     </form>
-    <div class="row">
-        <p>Write here: {{ digit }}</p>
-    </div>
-    <div class="row">
-        <div id = "added" [ngStyle]="{'display': digits.length === 0 ? 'none' : 'block'}"><h4>The added numbers</h4>
-            <ul *ngFor="let d of digits">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id = "defaultCheck1" [(ngModel)]="d.checked">
-                    <label class="form-check-label" for="defaultCheck1">
-                        <li [ngClass] = "{'isEven' : d.digit % 2 === 0 ? true : false, 'isOdd' : d.digit % 2 !== 0 ? true : false}">{{ d.digit }}</li>
-                    </label>
-                </div>
-            </ul>
-            <button class="btn btn-danger" (click)="deleteDigits()">Delete selected numbers</button>
-        </div>
-    </div>
+    <app-block1 [wDigit]="digit"></app-block1>
+    <app-block2 [digitsB2]="digits"></app-block2>
 </div>
